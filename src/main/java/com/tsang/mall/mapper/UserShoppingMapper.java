@@ -22,6 +22,18 @@ public interface UserShoppingMapper {
     @Update("update userShopping set gnumber = #{gnumber} where id = #{id}")
     void updateById(Integer gnumber , Integer id);
 
+    @Select("select * from userShopping where gid = #{gid} limit 1")
+    UserShopping selectByGid(Integer gid);
+
+    @Select("select * from userShopping where uid = #{uid} and gid = #{gid}")
+    UserShopping select(Integer uid,Integer gid);
+
+
+    @Update("update userShopping set gnumber = gnumber + 1 where gid = #{gid}")
+    void updateGnumber(Integer gid);
+
+    @Update("update userShopping set gnumber = #{gnumber} where id = #{id}")
+    void update(Integer gnumber , Integer id);
     /**
      *r0     * @param id
      * @return 用户id来查询购物车

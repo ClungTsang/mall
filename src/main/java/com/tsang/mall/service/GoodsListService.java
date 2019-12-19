@@ -31,11 +31,10 @@ public class GoodsListService {
         return JSON.toJSON(goodListMapper.selectByiId(id));
     }
 
-    @Cacheable
     public Object selectGoodByUserId(Integer uid){
         List<UserShopping> userShoppings = userShoppingMapper.selectGoodByUserUid(uid);
         for (int i = 0;i < userShoppings.size();i++){
-            List<Goods> goods = goodListMapper.selectById(userShoppings.get(i).getId());
+            List<Goods> goods = goodListMapper.selectById(userShoppings.get(i).getGid());
             userShoppings.get(i).setGoods(goods);
         }
         return userShoppings;

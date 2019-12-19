@@ -20,7 +20,12 @@ public class UserShoppingController  {
     }
     @PostMapping("/insert")
     public void insert( Integer uid, Integer gid, Integer gnumber){
-        userShoppingService.insert(uid,gid, gnumber);
+        userShoppingService.insert(uid,gid,gnumber);
+    }
+
+    @GetMapping("/delete/{id}")
+    public void delete(@PathVariable  Integer id){
+        userShoppingService.delete(id);
     }
 
 }
