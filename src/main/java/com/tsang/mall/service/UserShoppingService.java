@@ -20,12 +20,10 @@ public class UserShoppingService {
         return JSON.toJSON(userShoppingMapper.selectById(id));
     }
 
-    @Cacheable
     public void insert(Integer uid,Integer gid,Integer gnumber){
         userShoppingMapper.insert(uid,gid,gnumber);
     }
 
-    @CachePut
     public void update(Integer gnumber,Integer id){
         userShoppingMapper.updateById( gnumber,id);
     }

@@ -1,7 +1,6 @@
 package com.tsang.mall.controller;
 
 import com.tsang.mall.service.UserShoppingService;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -16,12 +15,11 @@ public class UserShoppingController  {
     private UserShoppingService userShoppingService;
 
     @PostMapping("/update")
-    public void update(@RequestParam Integer gnumber,
-                       @RequestParam Integer id){
+    public void update( Integer gnumber, Integer id){
          userShoppingService.update(gnumber,id);
     }
     @PostMapping("/insert")
-    public void insert(Integer uid, Integer gid,Integer gnumber){
+    public void insert( Integer uid, Integer gid, Integer gnumber){
         userShoppingService.insert(uid,gid, gnumber);
     }
 

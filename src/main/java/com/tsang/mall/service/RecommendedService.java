@@ -19,7 +19,6 @@ public class RecommendedService {
     @Autowired
     private RecommendedMapper recommendedMapper;
 
-    @Cacheable
     public void insert(Integer id, Integer gid ){
         recommendedMapper.insert(id,gid);
     }
