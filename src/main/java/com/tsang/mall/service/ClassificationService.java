@@ -6,6 +6,7 @@ import com.tsang.mall.model.GoodsType;
 import com.tsang.mall.model.TypeType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,6 @@ public class ClassificationService {
     @Autowired
     private ClassificationMapper classificationMapper;
 
-    @Cacheable
     public Object selectClassById(){
 
         List<ClassificationGoods> classList = classificationMapper.selectAll();
