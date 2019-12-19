@@ -41,7 +41,8 @@ res
 - 获取指定记录详情：GET /{控制器路由名称}/{id}
 
 **具体参数及返回结果定义可以运行代码查看Swagger-UI的Api文档：**
+**访问 ip:port/swagger-ui.html**
 
 #### 项目运行
 
-安装完相关依赖以后直接启动com.macro.mall.tiny.MallTinyApplication类的main函数即可。
+安装完相关依赖以后直接启动com.tsang.mall.MallApplication类的main函数即可。
